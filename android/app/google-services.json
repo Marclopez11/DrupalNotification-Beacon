@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "917682484584",
+    "project_id": "valdeiglesiasturisme",
+    "storage_bucket": "valdeiglesiasturisme.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917682484584:android:ef0b6d2377eb085b5792dd",
+        "android_client_info": {
+          "package_name": "es.sanmartindevaldeiglesias.turismo_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7zebbVP4eNVePC2aUREYxpZqbKOaSvIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
