@@ -35,7 +35,8 @@ class VibracomBeaconInfo {
 
 class VibracomBeacons {
   final Map<String, DateTime> _lastNotificationTime = {};
-  static const Duration _minimumTimeBetweenNotifications = Duration(days: 1);
+  static const Duration _minimumTimeBetweenNotifications =
+      Duration(minutes: 20);
 
   var beaconList = <VibracomBeacon>{};
 
