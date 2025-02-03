@@ -61,7 +61,7 @@ class SaveDeviceInfoService {
               'Información del dispositivo guardada exitosamente en Firestore');
           log('Device info saved successfully');
         } else {
-          print('El dispositivo ya existe en la base de datos');
+          print('El dispositivo ya existe en la base de datos DE FIREBASE');
           log('Device already exists in database');
         }
       } else {

@@ -34,21 +34,6 @@ class TokenManagementService {
     }
   }
 
-  // Nuevo método para obtener el estado actual de las notificaciones
-  Future<bool> getNotificationsEnabled() async {
-    print('Iniciando getNotificationsEnabled...');
-    final prefs = await SharedPreferences.getInstance();
-    print(prefs.getBool('notifications_enabled'));
-    return prefs.getBool('notifications_enabled') ?? false;
-  }
-
-  // Nuevo método para establecer el estado de las notificaciones
-  Future<void> setNotificationsEnabled(bool enabled) async {
-    print('Iniciando setNotificationsEnabled...');
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('notifications_enabled', enabled);
-  }
-
   // Verificar si existe el token del dispositivo
   Future<Map<String, dynamic>?> checkDeviceToken(String deviceId) async {
     print('Iniciando checkDeviceToken...');
@@ -68,11 +53,9 @@ class TokenManagementService {
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         if (data['data'] != null && data['data'].isNotEmpty) {
-          await setNotificationsEnabled(true);
           print('Token del dispositivo encontrado');
           return data['data'][0];
         }
-        await setNotificationsEnabled(false);
         print('Token del dispositivo no encontrado');
         return null;
       }
@@ -87,12 +70,6 @@ class TokenManagementService {
   Future<bool> createToken(String language) async {
     print('Iniciando createToken...');
     try {
-      final notificationsEnabled = await getNotificationsEnabled();
-      if (!notificationsEnabled) {
-        print('Notificaciones desactivadas en configuración');
-        return false;
-      }
-
       // Get device info
       String? deviceId = await SaveDeviceInfoService.getUserDeviceID();
       String? deviceName = await SaveDeviceInfoService.getUserDeviceName();
@@ -100,7 +77,6 @@ class TokenManagementService {
 
       if (deviceId == null || fcmToken == null) {
         print('Error: Could not get device info or FCM token');
-        await setNotificationsEnabled(false);
         return false;
       }
 
@@ -143,7 +119,6 @@ class TokenManagementService {
       );
 
       final success = response.statusCode == 201;
-      await setNotificationsEnabled(success);
       if (success) {
         print('Token creado con éxito');
       } else {
@@ -154,7 +129,6 @@ class TokenManagementService {
     } catch (e) {
       print('Error creando token: $e');
       // Log the error for debugging purposes
-      await setNotificationsEnabled(false);
       return false;
     }
   }
@@ -168,7 +142,6 @@ class TokenManagementService {
     try {
       final result = await _deleteTokenFromServer(sessionToken, tokenId);
       if (result) {
-        await setNotificationsEnabled(false);
         print('Token eliminado con éxito');
       }
       return result;
