@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.sanmartindevaldeiglesias.turismoApp</string>
+	<string>cinnia.valdeiglesias.app</string>
 	<key>PROJECT_ID</key>
 	<string>valdeiglesiasturisme</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:917682484584:ios:87a46960a1d93dc55792dd</string>
+	<string>1:917682484584:ios:59e669af24b578a55792dd</string>
 </dict>
 </plist>

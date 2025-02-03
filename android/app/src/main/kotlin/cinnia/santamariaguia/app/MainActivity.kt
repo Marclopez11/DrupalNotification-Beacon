@@ -1,4 +1,4 @@
-package es.sanmartindevaldeiglesias.turismo_app
+package cinnia.valdeiglesias.app
 
 import io.flutter.embedding.android.FlutterActivity
 

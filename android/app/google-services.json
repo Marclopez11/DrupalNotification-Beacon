@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:917682484584:android:ef0b6d2377eb085b5792dd",
+        "mobilesdk_app_id": "1:917682484584:android:d94198ff0c1e52135792dd",
         "android_client_info": {
-          "package_name": "es.sanmartindevaldeiglesias.turismo_app"
+          "package_name": "cinnia.valdeiglesias.app"
         }
       },
       "oauth_client": [],
