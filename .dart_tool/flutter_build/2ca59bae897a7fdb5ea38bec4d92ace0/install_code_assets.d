@@ -1,0 +1,1 @@
+ /Users/marclopez/Downloads/AFA/DrupalNotification-Beacon/.dart_tool/flutter_build/2ca59bae897a7fdb5ea38bec4d92ace0/native_assets.json: 
